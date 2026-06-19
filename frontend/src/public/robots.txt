@@ -1,0 +1,27 @@
+User-agent: *
+Allow: /
+
+# AI crawler access — allow all to enable citations in AI answer engines
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: BingBot
+Allow: /
+
+User-agent: Googlebot
+Allow: /
+
+# Dynamic sitemap — served from Render backend
+Sitemap: https://zroxz-backend.onrender.com/sitemap.xml

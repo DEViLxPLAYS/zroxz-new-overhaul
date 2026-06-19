@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How we built an AI voice agent for Evinn.pk — ZROXZ Blog</title>
+  <link rel="icon" type="image/svg+xml" href="../public/favicon.svg">
+  
+  <!-- Preload fonts to prevent FOUT -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700;800&family=Inter:wght@400;500;600&family=DM+Mono:wght@400;500&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700;800&family=Inter:wght@400;500;600&family=DM+Mono:wght@400;500&display=swap">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="../css/design-system.css">
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <nav>
+    <div class="container nav-container">
+      <a href="../index.html" class="logo-link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 32" fill="none" style="height: 30px; width: auto;">
+          <text x="0" y="26" font-family="'Bricolage Grotesque', sans-serif" font-weight="800" font-size="28" fill="currentColor" letter-spacing="-0.03em">ZROXZ</text>
+        </svg>
+      </a>
+      <div class="nav-menu">
+        <a href="../services/ai-voice-agents.html" class="nav-link">Services</a>
+        <a href="../index.html#how-we-work" class="nav-link">Work</a>
+        <a href="index.html" class="nav-link active">Blog</a>
+        <a href="../contact.html" class="nav-link">Contact</a>
+      </div>
+      <div class="nav-cta">
+        <a href="../contact.html" class="btn-primary btn-sm">Get a Free Audit <span class="arrow">&rarr;</span></a>
+      </div>
+      
+      <!-- Hamburger Icon -->
+      <button class="hamburger" aria-label="Toggle Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu Drawer -->
+  <div class="mobile-menu">
+    <div class="mobile-nav-links">
+      <a href="../services/ai-voice-agents.html" class="mobile-link">Services</a>
+      <a href="../index.html#how-we-work" class="mobile-link">Work</a>
+      <a href="index.html" class="mobile-link">Blog</a>
+      <a href="../contact.html" class="mobile-link">Contact</a>
+    </div>
+    <div style="margin-top: auto; width: 100%;">
+      <a href="../contact.html" class="btn-primary" style="width: 100%; justify-content: center;">Get a Free Audit <span class="arrow">&rarr;</span></a>
+    </div>
+  </div>
+
+  <!-- ARTICLE HEADER -->
+  <header class="blog-post-header">
+    <div class="container" style="max-width: 680px;">
+      
+      <!-- Breadcrumbs -->
+      <div class="blog-post-breadcrumbs">
+        <a href="../index.html">Home</a>
+        <span>/</span>
+        <a href="index.html">Blog</a>
+        <span>/</span>
+        <span style="color: var(--text-primary);">Evinn.pk Case Study</span>
+      </div>
+      
+      <h1 class="blog-post-h1">How we built an AI voice agent for Evinn.pk to handle 80+ daily calls</h1>
+      
+      <div class="blog-post-meta">
+        <span class="pill">AI Voice Agents</span>
+        <span class="blog-date">Jun 19, 2025</span>
+        <span class="blog-date" style="color: var(--text-muted);">&middot; 6 min read</span>
+      </div>
+      
+      <div class="blog-post-divider"></div>
+      
+      <!-- Quick Answer Box -->
+      <div class="quick-answer">
+        <div class="quick-answer-label">Quick Answer</div>
+        <div class="quick-answer-content">
+          By deploying a custom vector-indexed voice agent connected directly to Evinn.pk's GoHighLevel CRM, we automated 24/7 call answering, dropped manual lead management times by 70%, and captured inbound leads that previously went to voicemail.
+        </div>
+      </div>
+      
+    </div>
+  </header>
+
+  <!-- ARTICLE BODY -->
+  <main class="blog-post-body container">
+    <article>
+      <p>
+        For service-based companies and retailers, every phone call is a potential high-value sale. Yet, maintaining a dedicated, round-the-clock receptionist team is cost-prohibitive. Evinn.pk, an electric scooter vendor, faced this exact challenge: their 3-person staff was overwhelmed by 80+ customer queries per day, resulting in missed leads and slow sales velocity.
+      </p>
+
+      <h2>The Opportunity: Zero Response Delay</h2>
+      <p>
+        When a prospective client calls to check inventory sizes or warranty terms, they expect immediate answers. A delay of just five minutes in returning a voicemail drops connection likelihood by over 80%. We built a customized AI voice agent designed to handle inbound queries, qualify customers, and push hot prospects directly to live sales reps.
+      </p>
+
+      <blockquote>
+        "Our primary objective was to eliminate the voicemail bottleneck entirely. We needed a system that answered in under 600ms, maintained a consistent brand tone, and synced customer data directly."
+      </blockquote>
+
+      <h2>Building the System Core</h2>
+      <p>
+        The voice agent is built on a custom vector database mapping all product specifications. We configured a low-latency telephony server connected to a Twilio trunk, with webhooks pushing lead cards to the CRM. The core logic handles dynamic schema checks in real-time.
+      </p>
+
+      <p>
+        Here is a sample data block representing the call outcome sync webhook:
+      </p>
+      
+      <p style="margin-bottom: 24px;">
+        <inline-code>
+          { "call_id": "c_2025_ef99a2", "qualified": true, "lead_score": 92, "action": "book_appointment" }
+        </inline-code>
+      </p>
+
+      <h2>The Results: 70% Time Savings</h2>
+      <p>
+        Within two weeks of switching the primary business lines to the AI agent:
+      </p>
+      <p>
+        1. **0 Missed Calls:** 100% of incoming customer inquiries were picked up on the first ring, 24/7.<br>
+        2. **70% Handle Time Drop:** Routine FAQ calls were answered automatically, freeing human reps to focus strictly on closing qualified deals.<br>
+        3. **3x Demos Booked:** Seamless CRM scheduling integrations allowed callers to reserve test rides without manual intervention.
+      </p>
+
+      <h2>Key Learnings</h2>
+      <p>
+        Successful voice AI implementation requires strict script boundaries. By limiting the model's knowledge base to vector-indexed documents, we prevented conversational hallucination and maintained strict brand guidelines across thousands of calls.
+      </p>
+    </article>
+  </main>
+
+  <div class="blog-post-divider container" style="margin-top: 56px; margin-bottom: 56px;"></div>
+
+  <!-- RELATED POSTS -->
+  <section class="section" style="padding-top: 0;">
+    <div class="container">
+      <div class="section-header text-center reveal">
+        <p class="eyebrow">Related Resources</p>
+        <h2>More thinking on systems.</h2>
+      </div>
+      
+      <div class="grid-3 stagger-parent">
+        
+        <!-- Blog Card 2 -->
+        <article class="blog-card card-gradient-border">
+          <div class="blog-card-meta">
+            <span class="pill">AI Chatbots</span>
+            <span class="blog-date">May 2025</span>
+          </div>
+          <h3 class="blog-card-title">AI Chatbot vs Human Support: Cost Comparison</h3>
+          <p class="blog-card-excerpt">Analyzing support expenses, scaling bottlenecks, and exact ROI calculated across 40 US clients.</p>
+          <a href="ai-chatbot-vs-human-support-cost-2025.html" class="card-link">Read article <span class="arrow">&rarr;</span></a>
+        </article>
+
+        <!-- Blog Card 3 -->
+        <article class="blog-card card-gradient-border">
+          <div class="blog-card-meta">
+            <span class="pill">CRM Automation</span>
+            <span class="blog-date">Apr 2025</span>
+          </div>
+          <h3 class="blog-card-title">5 GoHighLevel Automations for Service Businesses</h3>
+          <p class="blog-card-excerpt">These five workflow setups save active teams an average of 15 hours of manual work every week.</p>
+          <a href="5-gohighlevel-automations-service-business.html" class="card-link">Read article <span class="arrow">&rarr;</span></a>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BLOCK -->
+  <section class="section" style="padding-top: 0;">
+    <div class="container">
+      <div class="cta-block reveal">
+        <h2>Want a custom voice agent built for your business?</h2>
+        <p>Book a free 30-minute technical discovery call. We will show you exactly how we build your agent script.</p>
+        <div class="cta-block-buttons">
+          <a href="../contact.html" class="btn-primary">Book Strategy Call <span class="arrow">&rarr;</span></a>
+          <a href="../contact.html?type=form" class="btn-secondary">Send a Message</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        
+        <div class="footer-brand">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 32" fill="none">
+            <text x="0" y="26" font-family="'Bricolage Grotesque', sans-serif" font-weight="800" font-size="28" fill="currentColor" letter-spacing="-0.03em">ZROXZ</text>
+          </svg>
+          <div class="footer-tagline">AI systems that run your business.</div>
+          <div class="footer-socials">
+            <a href="https://linkedin.com/company/zroxz" target="_blank" rel="noopener" class="footer-social-link" aria-label="LinkedIn">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width: 18px; height: 18px;">
+                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+                <rect x="2" y="9" width="4" height="12" />
+                <circle cx="4" cy="4" r="2" />
+              </svg>
+            </a>
+            <a href="https://x.com/zroxz" target="_blank" rel="noopener" class="footer-social-link" aria-label="Twitter">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width: 18px; height: 18px;">
+                <path d="M4 4l11.733 16h4.267l-11.733 -16z" />
+                <path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772" />
+              </svg>
+            </a>
+            <a href="https://github.com/zroxz" target="_blank" rel="noopener" class="footer-social-link" aria-label="GitHub">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width: 18px; height: 18px;">
+                <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />
+              </svg>
+            </a>
+          </div>
+        </div>
+        
+        <div class="footer-col">
+          <h4>Services</h4>
+          <div class="footer-links">
+            <a href="../services/ai-voice-agents.html" class="footer-link">AI Voice Agents</a>
+            <a href="../services/ai-chatbots.html" class="footer-link">AI Chatbots</a>
+            <a href="../services/crm-automation.html" class="footer-link">CRM Automation</a>
+            <a href="../services/website-development.html" class="footer-link">Website Development</a>
+            <a href="../services/video-editing-motion-design.html" class="footer-link">Video &amp; Motion</a>
+            <a href="../services/saas-development.html" class="footer-link">SaaS Development</a>
+          </div>
+        </div>
+        
+        <div class="footer-col">
+          <h4>Company</h4>
+          <div class="footer-links">
+            <a href="../index.html#how-we-work" class="footer-link">Our Process</a>
+            <a href="index.html" class="footer-link">Blog &amp; Case Studies</a>
+            <a href="../contact.html" class="footer-link">Careers</a>
+            <a href="../index.html" class="footer-link">Privacy Policy</a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <div class="footer-links">
+            <a href="../contact.html" class="footer-link">Book a Call</a>
+            <a href="mailto:hello@zroxz.com" class="footer-link">hello@zroxz.com</a>
+            <a href="https://wa.me/923001234567" target="_blank" rel="noopener" class="footer-link">WhatsApp Support</a>
+          </div>
+        </div>
+
+      </div>
+      
+      <div class="footer-bottom">
+        <div class="footer-bottom-text">&copy; 2025 Zroxz. All rights reserved.</div>
+        <div class="footer-bottom-text">Built in Pakistan</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="../js/main.js"></script>
+</body>
+</html>

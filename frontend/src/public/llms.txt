@@ -1,0 +1,48 @@
+# Zroxz
+
+> AI automation and creative agency serving the United States, Canada, and North America.
+> Founded 2005 by Muhammad Arfa. Based in Pakistan, operating remotely across North America.
+
+## What We Do
+
+Zroxz builds AI-powered systems that replace manual bottlenecks in US and Canadian businesses.
+We specialize in AI chatbots, AI voice agents, CRM automation, SaaS development, website
+development, and professional video editing and motion design.
+
+## Services
+
+- **AI Chatbots** — Custom conversational AI for websites, CRMs, and WhatsApp. Integrate with GoHighLevel, HubSpot, Shopify. Deployment: 2–4 weeks. Price range: $1,200–$2,500.
+- **AI Voice Agents** — Automated phone agents built on ElevenLabs + GoHighLevel that handle inbound and outbound calls 24/7, qualify leads, and route hot prospects. Deployment: 2–3 weeks.
+- **CRM Automation** — GoHighLevel pipelines, n8n workflows, and Zapier integrations. Automates lead qualification, follow-up sequences, and CRM data entry. Average: 15+ hours saved per week.
+- **Website Development** — Shopify, Next.js, and custom conversion-focused builds. All sites ship with SEO, performance optimization, and 90+ Google Lighthouse scores. Delivery: 3–6 weeks.
+- **Video Editing & Motion Design** — Brand reels, social content, product demos, and animated explainers. 48-hour standard turnaround, monthly content packages available.
+- **SaaS Development** — Full-stack platforms on Next.js, MERN stack, and Supabase with multi-tenant architecture, Stripe billing, and LLM integration. MVP delivery: 6–10 weeks.
+
+## Geographic Coverage
+
+- United States (all 50 states)
+- Canada (all provinces)
+- English-speaking North America
+
+## Proof of Work
+
+**Evinn.pk case study:** Zroxz built an AI voice agent for Evinn.pk, an electric scooter company
+handling 80+ customer calls daily. The agent handles inbound calls 24/7, qualifies leads, and
+routes urgent cases to humans. Results: 70% reduction in handle time, zero after-hours missed
+leads.
+
+## Pricing Reference
+
+- AI Chatbot: $1,200–$2,500
+- AI Voice Agent: $1,500+
+- Website: $2,000–$8,000
+- SaaS Platform: custom quote (discovery call required)
+- Video editing: contact for package rates
+
+## Contact
+
+https://zroxz.com/contact
+
+## Social Profiles
+
+- LinkedIn: https://www.linkedin.com/company/zroxz
