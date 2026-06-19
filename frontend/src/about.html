@@ -1,0 +1,929 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Zroxz — Meet the Team Behind the AI & Video Production Agency</title>
+  <meta name="description" content="Meet Muhammad Arfa (AI Automation Lead, 8+ years) and Hamzah Ayyan (Video Edit Lead, 8+ years) — the specialists behind Zroxz's results for US and Canadian businesses.">
+  <link rel="canonical" href="https://zroxz.com/about">
+  <link rel="icon" type="image/svg+xml" href="public/favicon.svg">
+  <meta property="og:title" content="About Zroxz — Meet Muhammad Arfa & Hamzah Ayyan">
+  <meta property="og:description" content="Muhammad Arfa leads AI automation. Hamzah Ayyan leads video production. Both with 8+ years of proven client results.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://zroxz.com/about">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "AboutPage",
+    "name": "About Zroxz",
+    "url": "https://zroxz.com/about",
+    "description": "Zroxz is led by Muhammad Arfa (AI Automation, 8+ years) and Hamzah Ayyan (Video Production, 8+ years). We serve US and Canadian businesses with AI chatbots, voice agents, CRM automation, and video content.",
+    "mainEntity": {
+      "@type": "Organization",
+      "name": "Zroxz",
+      "url": "https://zroxz.com",
+      "foundingDate": "2005",
+      "employee": [
+        {
+          "@type": "Person",
+          "name": "Muhammad Arfa",
+          "jobTitle": "AI Automation Lead",
+          "description": "Muhammad Arfa has 8+ years of experience building AI automation systems, voice agents, and CRM pipelines for businesses across the United States and Canada."
+        },
+        {
+          "@type": "Person",
+          "name": "Hamzah Ayyan",
+          "jobTitle": "Video Edit Lead",
+          "description": "Hamzah Ayyan has 8+ years of experience in professional video editing and motion design, producing brand reels, social content, and animated explainers for clients globally."
+        }
+      ]
+    }
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700;800&family=Inter:wght@400;500;600&family=DM+Mono:wght@400;500&display=swap">
+  <link rel="stylesheet" href="css/design-system.css">
+  <link rel="stylesheet" href="css/chat-widget.css">
+
+  <style>
+    /* ── About-page exclusive styles ── */
+
+    /* Timeline / stat strip */
+    .stat-strip {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      margin-top: clamp(48px, 6vw, 80px);
+    }
+    .stat-cell {
+      background: var(--bg);
+      padding: 32px 28px;
+      text-align: center;
+    }
+    .stat-cell:hover { background: var(--bg-subtle); }
+    .stat-number {
+      font-family: var(--font-display);
+      font-size: clamp(36px, 4vw, 52px);
+      font-weight: 800;
+      color: var(--text-primary);
+      line-height: 1;
+      letter-spacing: -0.03em;
+    }
+    .stat-number span { color: var(--purple-500); }
+    .stat-label {
+      font-family: var(--font-mono);
+      font-size: var(--text-xs);
+      text-transform: uppercase;
+      letter-spacing: var(--tracking-wide);
+      color: var(--text-muted);
+      margin-top: 8px;
+    }
+
+    /* Team card */
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 32px;
+      margin-top: clamp(48px, 6vw, 72px);
+    }
+    .team-card {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-card);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      position: relative;
+    }
+    .team-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: var(--radius-lg);
+      padding: 1.5px;
+      background: var(--gradient-border);
+      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    .team-card:hover::before { opacity: 1; }
+    .team-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-hover);
+    }
+
+    /* Avatar area */
+    .team-avatar-wrap {
+      position: relative;
+      background: linear-gradient(135deg, var(--purple-100) 0%, #EFF6FF 100%);
+      padding: 48px 32px 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .team-avatar {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      background: var(--gradient-border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-display);
+      font-size: 40px;
+      font-weight: 800;
+      color: #fff;
+      letter-spacing: -0.03em;
+      box-shadow: 0 8px 32px rgba(124,58,237,0.25);
+      position: relative;
+      z-index: 1;
+    }
+    .team-avatar-ring {
+      position: absolute;
+      width: 136px;
+      height: 136px;
+      border-radius: 50%;
+      border: 2px solid rgba(124,58,237,0.2);
+      animation: ring-pulse 3s ease-in-out infinite;
+    }
+    .team-avatar-ring-2 {
+      width: 156px;
+      height: 156px;
+      animation-delay: 1.5s;
+    }
+    @keyframes ring-pulse {
+      0%, 100% { opacity: 0.3; transform: scale(1); }
+      50% { opacity: 0.8; transform: scale(1.04); }
+    }
+    .team-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-pill);
+      padding: 4px 12px;
+      font-family: var(--font-mono);
+      font-size: 10px;
+      font-weight: 500;
+      color: var(--purple-500);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-top: 16px;
+      box-shadow: var(--shadow-sm);
+    }
+    .team-badge-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--purple-500);
+      animation: blink 2s ease-in-out infinite;
+    }
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.3; }
+    }
+    .team-avatar-wave {
+      width: 100%;
+      height: 32px;
+      margin-top: 24px;
+      overflow: hidden;
+    }
+    .team-avatar-wave svg { display: block; }
+
+    /* Card body */
+    .team-body {
+      padding: 28px 32px 32px;
+    }
+    .team-name {
+      font-family: var(--font-display);
+      font-size: var(--text-2xl);
+      font-weight: 800;
+      color: var(--text-primary);
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+    }
+    .team-title {
+      font-family: var(--font-mono);
+      font-size: var(--text-xs);
+      text-transform: uppercase;
+      letter-spacing: var(--tracking-wide);
+      color: var(--purple-500);
+      margin-top: 6px;
+    }
+    .team-exp-bar {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 16px;
+    }
+    .team-exp-label {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-muted);
+      white-space: nowrap;
+    }
+    .team-exp-track {
+      flex: 1;
+      height: 4px;
+      background: var(--purple-100);
+      border-radius: 100px;
+      overflow: hidden;
+    }
+    .team-exp-fill {
+      height: 100%;
+      width: 0%;
+      background: var(--gradient-border);
+      border-radius: 100px;
+      transition: width 1.4s cubic-bezier(0.25, 1, 0.5, 1);
+    }
+    .team-exp-val {
+      font-family: var(--font-display);
+      font-size: 14px;
+      font-weight: 800;
+      color: var(--purple-500);
+      white-space: nowrap;
+    }
+    .team-bio {
+      font-size: 15px;
+      line-height: 1.7;
+      color: var(--text-secondary);
+      margin-top: 16px;
+    }
+    .team-skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 20px;
+    }
+    .team-skill {
+      background: var(--bg-pill);
+      color: var(--purple-600);
+      border-radius: var(--radius-pill);
+      padding: 4px 12px;
+      font-family: var(--font-mono);
+      font-size: 10px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+    .team-results {
+      margin-top: 24px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+    }
+    .team-result-item {
+      background: var(--bg-subtle);
+      border-radius: var(--radius-md);
+      padding: 14px 12px;
+      text-align: center;
+    }
+    .team-result-num {
+      font-family: var(--font-display);
+      font-size: 22px;
+      font-weight: 800;
+      color: var(--text-primary);
+      letter-spacing: -0.02em;
+      line-height: 1;
+    }
+    .team-result-num span { color: var(--purple-500); }
+    .team-result-label {
+      font-size: 11px;
+      color: var(--text-muted);
+      margin-top: 4px;
+      line-height: 1.3;
+    }
+
+    /* Mission block */
+    .mission-block {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: center;
+    }
+    .mission-quote {
+      font-family: var(--font-display);
+      font-size: clamp(22px, 2.5vw, 32px);
+      font-weight: 700;
+      color: var(--text-primary);
+      line-height: 1.35;
+      letter-spacing: -0.02em;
+      position: relative;
+      padding-left: 28px;
+    }
+    .mission-quote::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 4px;
+      bottom: 4px;
+      width: 3px;
+      background: var(--gradient-border);
+      border-radius: 100px;
+    }
+    .mission-quote em {
+      font-style: normal;
+      background: var(--gradient-border);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .mission-list {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .mission-item {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+    }
+    .mission-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      background: var(--bg-pill);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .mission-icon svg { width: 18px; height: 18px; color: var(--purple-500); stroke: currentColor; }
+    .mission-item-title {
+      font-weight: 600;
+      color: var(--text-primary);
+      font-size: 15px;
+      margin-bottom: 2px;
+    }
+    .mission-item-body { font-size: 14px; color: var(--text-secondary); line-height: 1.55; }
+
+    /* Values strip */
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .value-card {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 28px 24px;
+      text-align: center;
+      transition: transform 0.25s, box-shadow 0.25s;
+    }
+    .value-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-card); }
+    .value-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 14px;
+      background: var(--bg-pill);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 16px;
+    }
+    .value-icon svg { width: 24px; height: 24px; color: var(--purple-500); stroke: currentColor; }
+    .value-title {
+      font-family: var(--font-display);
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 8px;
+    }
+    .value-body { font-size: 14px; color: var(--text-secondary); line-height: 1.6; }
+
+    /* Timeline */
+    .timeline {
+      position: relative;
+      padding-left: 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+    }
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 7px;
+      top: 8px;
+      bottom: 8px;
+      width: 2px;
+      background: linear-gradient(180deg, var(--purple-500) 0%, var(--purple-200) 100%);
+      border-radius: 100px;
+    }
+    .timeline-item { position: relative; }
+    .timeline-dot {
+      position: absolute;
+      left: -25px;
+      top: 6px;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: var(--purple-500);
+      border: 3px solid var(--bg);
+      box-shadow: 0 0 0 2px var(--purple-300, #C4B5FD);
+    }
+    .timeline-year {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--purple-500);
+      margin-bottom: 4px;
+    }
+    .timeline-title {
+      font-weight: 600;
+      color: var(--text-primary);
+      font-size: 15px;
+      margin-bottom: 4px;
+    }
+    .timeline-body { font-size: 14px; color: var(--text-secondary); line-height: 1.55; }
+
+    @media (max-width: 768px) {
+      .stat-strip { grid-template-columns: repeat(2, 1fr); }
+      .team-grid { grid-template-columns: 1fr; }
+      .mission-block { grid-template-columns: 1fr; gap: 32px; }
+      .values-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 480px) {
+      .stat-strip { grid-template-columns: 1fr 1fr; }
+      .team-results { grid-template-columns: repeat(3, 1fr); gap: 8px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav>
+    <div class="container nav-container">
+      <a href="index.html" class="logo-link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 32" fill="none" style="height: 30px; width: auto;">
+          <text x="0" y="26" font-family="'Bricolage Grotesque', sans-serif" font-weight="800" font-size="28" fill="currentColor" letter-spacing="-0.03em">ZROXZ</text>
+        </svg>
+      </a>
+      <div class="nav-menu">
+        <a href="services/ai-chatbots.html" class="nav-link">Services</a>
+        <a href="about.html" class="nav-link active">About</a>
+        <a href="blog/index.html" class="nav-link">Blog</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </div>
+      <div class="nav-cta">
+        <a href="contact.html" class="btn-primary btn-sm">Get a Free Audit <span class="arrow">&rarr;</span></a>
+      </div>
+      <button class="hamburger" aria-label="Toggle Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu">
+    <div class="mobile-nav-links">
+      <a href="services/ai-chatbots.html" class="mobile-link">Services</a>
+      <a href="about.html" class="mobile-link">About</a>
+      <a href="blog/index.html" class="mobile-link">Blog</a>
+      <a href="contact.html" class="mobile-link">Contact</a>
+    </div>
+    <div style="margin-top: auto; width: 100%;">
+      <a href="contact.html" class="btn-primary" style="width: 100%; justify-content: center;">Get a Free Audit <span class="arrow">&rarr;</span></a>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="hero-bloom"></div>
+    <div class="container" style="max-width: 860px; text-align: center;">
+      <p class="eyebrow hero-eyebrow reveal">About Us</p>
+      <h1 class="hero-h1 reveal">
+        Two specialists.<br>
+        <span class="hero-accent">One mission.</span>
+      </h1>
+      <p class="hero-sub reveal" style="max-width: 620px; margin: 0 auto 40px;">
+        Zroxz is built by practitioners — not project managers. Muhammad Arfa leads AI automation. Hamzah Ayyan leads video production. Both with 8+ years of results that show up in your metrics, not our pitch deck.
+      </p>
+      <div class="hero-cta reveal">
+        <a href="contact.html" class="btn-primary">Work With Us <span class="arrow">&rarr;</span></a>
+        <a href="#team" class="btn-secondary">Meet the Team</a>
+      </div>
+
+      <!-- Stat strip -->
+      <div class="stat-strip reveal">
+        <div class="stat-cell">
+          <div class="stat-number">8<span>+</span></div>
+          <div class="stat-label">Years in AI Automation</div>
+        </div>
+        <div class="stat-cell">
+          <div class="stat-number">8<span>+</span></div>
+          <div class="stat-label">Years in Video Production</div>
+        </div>
+        <div class="stat-cell">
+          <div class="stat-number">50<span>+</span></div>
+          <div class="stat-label">Clients Served</div>
+        </div>
+        <div class="stat-cell">
+          <div class="stat-number">3<span>x</span></div>
+          <div class="stat-label">Avg. ROI for Clients</div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- TEAM SECTION -->
+  <section class="section section-alt" id="team">
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="eyebrow">The Team</p>
+        <h2>The people behind the results.</h2>
+        <p>No bench of generalists. Two dedicated leads who have spent 8+ years mastering their craft and turning that expertise into measurable outcomes for clients in the US, Canada, and globally.</p>
+      </div>
+
+      <div class="team-grid">
+
+        <!-- Muhammad Arfa — AI Lead -->
+        <div class="team-card reveal">
+          <div class="team-avatar-wrap">
+            <div class="team-avatar-ring team-avatar-ring-2"></div>
+            <div class="team-avatar-ring"></div>
+            <div class="team-avatar">MA</div>
+            <div class="team-badge">
+              <div class="team-badge-dot"></div>
+              AI Automation Lead
+            </div>
+            <div class="team-avatar-wave">
+              <svg viewBox="0 0 400 32" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" width="100%" height="32">
+                <path d="M0,16 C100,0 200,32 300,16 C350,8 380,20 400,16 L400,32 L0,32 Z" fill="white"/>
+              </svg>
+            </div>
+          </div>
+          <div class="team-body">
+            <div class="team-name">Muhammad Arfa</div>
+            <div class="team-title">AI Automation Lead &mdash; Founder</div>
+
+            <div class="team-exp-bar">
+              <span class="team-exp-label">Experience</span>
+              <div class="team-exp-track">
+                <div class="team-exp-fill" data-width="92"></div>
+              </div>
+              <span class="team-exp-val">8+ yrs</span>
+            </div>
+
+            <p class="team-bio">
+              Muhammad has spent 8+ years building AI systems that replace manual bottlenecks in sales, support, and operations. From his first GoHighLevel pipeline in 2016 to deploying multi-tenant SaaS platforms and ElevenLabs voice agents for US real estate teams, his work is driven by one principle: <strong>automation that pays for itself within 90 days.</strong>
+            </p>
+            <p class="team-bio" style="margin-top: 12px;">
+              He has built AI chatbots serving 10,000+ monthly conversations, voice agents cutting inbound call costs by 70%, and n8n workflows saving clients 15+ hours every week. Every system is documented, measurable, and built to run without him.
+            </p>
+
+            <div class="team-skills">
+              <span class="team-skill">OpenAI / GPT-4o</span>
+              <span class="team-skill">ElevenLabs</span>
+              <span class="team-skill">GoHighLevel</span>
+              <span class="team-skill">n8n Workflows</span>
+              <span class="team-skill">Supabase</span>
+              <span class="team-skill">Next.js / MERN</span>
+              <span class="team-skill">Stripe</span>
+              <span class="team-skill">Zapier</span>
+            </div>
+
+            <div class="team-results">
+              <div class="team-result-item">
+                <div class="team-result-num">70<span>%</span></div>
+                <div class="team-result-label">Call cost reduction</div>
+              </div>
+              <div class="team-result-item">
+                <div class="team-result-num">15<span>+</span></div>
+                <div class="team-result-label">Hrs saved per client / week</div>
+              </div>
+              <div class="team-result-item">
+                <div class="team-result-num">90<span>d</span></div>
+                <div class="team-result-label">Avg ROI payback</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hamzah Ayyan — Video Lead -->
+        <div class="team-card reveal" style="transition-delay: 80ms;">
+          <div class="team-avatar-wrap" style="background: linear-gradient(135deg, #EFF6FF 0%, var(--purple-100) 100%);">
+            <div class="team-avatar-ring team-avatar-ring-2"></div>
+            <div class="team-avatar-ring"></div>
+            <div class="team-avatar" style="background: linear-gradient(135deg, #60A5FA 0%, #7C3AED 100%);">HA</div>
+            <div class="team-badge">
+              <div class="team-badge-dot" style="background: #60A5FA;"></div>
+              Video Edit Lead
+            </div>
+            <div class="team-avatar-wave">
+              <svg viewBox="0 0 400 32" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" width="100%" height="32">
+                <path d="M0,16 C100,0 200,32 300,16 C350,8 380,20 400,16 L400,32 L0,32 Z" fill="white"/>
+              </svg>
+            </div>
+          </div>
+          <div class="team-body">
+            <div class="team-name">Hamzah Ayyan</div>
+            <div class="team-title">Video Edit Lead &mdash; Creative Director</div>
+
+            <div class="team-exp-bar">
+              <span class="team-exp-label">Experience</span>
+              <div class="team-exp-track">
+                <div class="team-exp-fill" data-width="90"></div>
+              </div>
+              <span class="team-exp-val">8+ yrs</span>
+            </div>
+
+            <p class="team-bio">
+              Hamzah has spent 8+ years in the edit suite turning raw footage into brand stories that convert. His career spans brand reels for North American e-commerce brands, animated explainers for SaaS companies, and high-retention social content for creators with 1M+ audiences.
+            </p>
+            <p class="team-bio" style="margin-top: 12px;">
+              He brings motion design expertise and an editor's instinct for pacing that the algorithm rewards. Hamzah leads every video project at Zroxz — from the brief to the final export — with a 48-hour standard turnaround on social content and 5-day delivery on full brand productions.
+            </p>
+
+            <div class="team-skills">
+              <span class="team-skill">After Effects</span>
+              <span class="team-skill">Premiere Pro</span>
+              <span class="team-skill">DaVinci Resolve</span>
+              <span class="team-skill">Motion Design</span>
+              <span class="team-skill">Brand Reels</span>
+              <span class="team-skill">Social Content</span>
+              <span class="team-skill">Product Video</span>
+              <span class="team-skill">Explainers</span>
+            </div>
+
+            <div class="team-results">
+              <div class="team-result-item">
+                <div class="team-result-num">48<span>h</span></div>
+                <div class="team-result-label">Social content turnaround</div>
+              </div>
+              <div class="team-result-item">
+                <div class="team-result-num">1M<span>+</span></div>
+                <div class="team-result-label">Audience reach for clients</div>
+              </div>
+              <div class="team-result-item">
+                <div class="team-result-num">5<span>d</span></div>
+                <div class="team-result-label">Brand production delivery</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- MISSION SECTION -->
+  <section class="section">
+    <div class="container">
+      <div class="mission-block reveal">
+        <div>
+          <p class="eyebrow" style="margin-bottom: 24px;">Our Mission</p>
+          <div class="mission-quote">
+            We exist to give small and mid-size businesses access to the <em>same AI infrastructure</em> that Fortune 500 companies spend millions building internally.
+          </div>
+          <p style="margin-top: 24px; font-size: 15px; line-height: 1.7; color: var(--text-secondary);">
+            Most automation agencies sell you dashboards and retainers. We sell you outcomes: fewer hours wasted, more leads captured, lower operational cost. If we can't show the ROI within 90 days, we rebuild it.
+          </p>
+          <div style="margin-top: 28px;">
+            <a href="contact.html" class="btn-primary">Book a Free Strategy Call <span class="arrow">&rarr;</span></a>
+          </div>
+        </div>
+        <div class="mission-list">
+          <div class="mission-item">
+            <div class="mission-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            </div>
+            <div>
+              <div class="mission-item-title">Outcomes over deliverables</div>
+              <div class="mission-item-body">We scope every project around a measurable result — not a list of features. Hours saved, leads captured, cost reduced.</div>
+            </div>
+          </div>
+          <div class="mission-item">
+            <div class="mission-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z"/></svg>
+            </div>
+            <div>
+              <div class="mission-item-title">Speed without shortcuts</div>
+              <div class="mission-item-body">AI chatbots live in 2–4 weeks. Voice agents in 2–3 weeks. We move fast because we've built the same thing 50 times — not because we skip the hard parts.</div>
+            </div>
+          </div>
+          <div class="mission-item">
+            <div class="mission-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z"/></svg>
+            </div>
+            <div>
+              <div class="mission-item-title">No black boxes</div>
+              <div class="mission-item-body">Every system we build is fully documented, handed over with a Loom walkthrough, and architected so your team can manage it independently.</div>
+            </div>
+          </div>
+          <div class="mission-item">
+            <div class="mission-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19.128a9.38 9.38 0 002.625.372 9.337 9.337 0 004.121-.952 4.125 4.125 0 00-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 018.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0111.964-3.07M12 6.375a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zm8.25 2.25a2.625 2.625 0 11-5.25 0 2.625 2.625 0 015.25 0z"/></svg>
+            </div>
+            <div>
+              <div class="mission-item-title">Client-first, always</div>
+              <div class="mission-item-body">We serve US and Canadian businesses because we understand the North American market — the tools, the compliance expectations, and the competitive pressure you face.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VALUES -->
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="eyebrow">Our Values</p>
+        <h2>How we operate, every project.</h2>
+      </div>
+      <div class="values-grid stagger-parent">
+        <div class="value-card">
+          <div class="value-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18L9 11.25l4.306 4.307a11.95 11.95 0 015.814-5.519l2.74-1.22m0 0l-5.94-2.28m5.94 2.28l-2.28 5.941"/></svg>
+          </div>
+          <div class="value-title">Measurable Results</div>
+          <div class="value-body">Every engagement has a defined success metric before work starts. Vanity deliverables are not a result.</div>
+        </div>
+        <div class="value-card">
+          <div class="value-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          </div>
+          <div class="value-title">Radical Transparency</div>
+          <div class="value-body">Scope, timeline, and cost defined up front. No surprise invoices. No scope creep without a conversation first.</div>
+        </div>
+        <div class="value-card">
+          <div class="value-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09z"/></svg>
+          </div>
+          <div class="value-title">Craft at Every Level</div>
+          <div class="value-body">From the system prompt on a chatbot to the color grade on a video — we sweat the details that separate good from exceptional.</div>
+        </div>
+        <div class="value-card">
+          <div class="value-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M13.19 8.688a4.5 4.5 0 011.242 7.244l-4.5 4.5a4.5 4.5 0 01-6.364-6.364l1.757-1.757m13.35-.622l1.757-1.757a4.5 4.5 0 00-6.364-6.364l-4.5 4.5a4.5 4.5 0 001.242 7.244"/></svg>
+          </div>
+          <div class="value-title">Long-term Partnership</div>
+          <div class="value-body">We build systems designed to grow with you — not to lock you in. Our best clients have been with us for years, not projects.</div>
+        </div>
+        <div class="value-card">
+          <div class="value-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z"/></svg>
+          </div>
+          <div class="value-title">Relentless Iteration</div>
+          <div class="value-body">AI models improve. Platforms change. We stay current so your systems don't become technical debt six months after launch.</div>
+        </div>
+        <div class="value-card">
+          <div class="value-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253"/></svg>
+          </div>
+          <div class="value-title">North America Focus</div>
+          <div class="value-body">We specifically target the US and Canadian market — we know the tools, compliance standards, and business culture you operate in.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STORY TIMELINE -->
+  <section class="section">
+    <div class="container">
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start;" class="reveal">
+        <div>
+          <p class="eyebrow" style="margin-bottom: 24px;">Our Story</p>
+          <h2 style="font-family: var(--font-display); font-size: clamp(28px, 3vw, 40px); font-weight: 800; color: var(--text-primary); letter-spacing: -0.02em; line-height: 1.2; margin-bottom: 20px;">Built on 8 years of doing the work.</h2>
+          <p style="font-size: 15px; color: var(--text-secondary); line-height: 1.75;">
+            Zroxz didn't start with a pitch deck. It started with Muhammad Arfa taking on his first automation project in 2016 — a CRM pipeline for a small US real estate team — and Hamzah Ayyan cutting his first professional brand reel the same year. Over 8 years, they built the systems, refined the process, and now work together to deliver the full stack: AI that runs your operations and video that builds your brand.
+          </p>
+        </div>
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-year">2016</div>
+            <div class="timeline-title">First client automation</div>
+            <div class="timeline-body">Muhammad builds his first GoHighLevel CRM pipeline for a US real estate team. Hamzah delivers his first professional brand reel.</div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-year">2018</div>
+            <div class="timeline-title">Scaling to North America</div>
+            <div class="timeline-body">Both leads expand from local clients to serving US and Canadian businesses remotely, building the async delivery model that Zroxz runs on today.</div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-year">2022</div>
+            <div class="timeline-title">AI pivot — chatbots &amp; voice agents</div>
+            <div class="timeline-body">With the rise of GPT-4 and ElevenLabs, Muhammad moves the automation practice into conversational AI — building the first Zroxz voice agent for a Canadian mortgage firm.</div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-year">2024</div>
+            <div class="timeline-title">Zroxz launches as a unified brand</div>
+            <div class="timeline-body">AI automation and video production unite under Zroxz — giving North American businesses a single agency for both the systems and the content that drives growth.</div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-year">2025</div>
+            <div class="timeline-title">Today: 50+ clients, 8+ years deep</div>
+            <div class="timeline-body">Serving clients from New York to Vancouver with AI chatbots, voice agents, CRM automation, SaaS platforms, and premium video content.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section section-alt">
+    <div class="container">
+      <div class="cta-block reveal">
+        <h2>Ready to work with the team?</h2>
+        <p>Book a 30-minute strategy call with Muhammad or Hamzah. We'll map out exactly what your business needs — AI automation, video, or both.</p>
+        <div class="cta-block-buttons">
+          <a href="contact.html" class="btn-primary">Book a Strategy Call <span class="arrow">&rarr;</span></a>
+          <a href="services/ai-chatbots.html" class="btn-secondary">Explore Services</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 32" fill="none">
+            <text x="0" y="26" font-family="'Bricolage Grotesque', sans-serif" font-weight="800" font-size="28" fill="currentColor" letter-spacing="-0.03em">ZROXZ</text>
+          </svg>
+          <div class="footer-tagline">AI systems that run your business.</div>
+          <div class="footer-socials">
+            <a href="https://linkedin.com/company/zroxz" target="_blank" rel="noopener" class="footer-social-link" aria-label="LinkedIn">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" style="width:18px;height:18px;"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+            </a>
+            <a href="https://x.com/zroxz" target="_blank" rel="noopener" class="footer-social-link" aria-label="Twitter/X">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" style="width:18px;height:18px;"><path d="M4 4l11.733 16h4.267l-11.733-16z"/><path d="M4 20l6.768-6.768m2.46-2.46l6.772-6.772"/></svg>
+            </a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Services</h4>
+          <div class="footer-links">
+            <a href="services/ai-voice-agents.html" class="footer-link">AI Voice Agents</a>
+            <a href="services/ai-chatbots.html" class="footer-link">AI Chatbots</a>
+            <a href="services/crm-automation.html" class="footer-link">CRM Automation</a>
+            <a href="services/website-development.html" class="footer-link">Website Development</a>
+            <a href="services/video-editing-motion-design.html" class="footer-link">Video &amp; Motion</a>
+            <a href="services/saas-development.html" class="footer-link">SaaS Development</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <div class="footer-links">
+            <a href="about.html" class="footer-link">About Us</a>
+            <a href="index.html#how-we-work" class="footer-link">Our Process</a>
+            <a href="blog/index.html" class="footer-link">Blog &amp; Case Studies</a>
+            <a href="contact.html" class="footer-link">Contact</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <div class="footer-links">
+            <a href="contact.html" class="footer-link">Book a Call</a>
+            <a href="mailto:hello@zroxz.com" class="footer-link">hello@zroxz.com</a>
+            <a href="https://wa.me/923001234567" target="_blank" rel="noopener" class="footer-link">WhatsApp</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="footer-bottom-text">&copy; 2025 Zroxz. All rights reserved.</div>
+        <div class="footer-bottom-text">Built in Pakistan</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/chat.js"></script>
+  <script>
+    // Animate experience bars when they enter viewport
+    const bars = document.querySelectorAll('.team-exp-fill');
+    const barObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const fill = entry.target;
+          fill.style.width = fill.dataset.width + '%';
+          barObserver.unobserve(fill);
+        }
+      });
+    }, { threshold: 0.3 });
+    bars.forEach(b => barObserver.observe(b));
+  </script>
+</body>
+</html>
