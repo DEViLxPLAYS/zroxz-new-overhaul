@@ -1,0 +1,32 @@
+# render.yaml — Render Blueprint
+# Docs: https://render.com/docs/blueprint-spec
+# This file must be at the ROOT of the repo (not inside /backend)
+
+services:
+  - type: web
+    name: zroxz-backend
+    runtime: node
+    rootDir: backend
+    buildCommand: npm install
+    startCommand: node src/server.js
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 3001
+      - key: SUPABASE_URL
+        sync: false
+      - key: SUPABASE_SERVICE_ROLE_KEY
+        sync: false
+      - key: OPENAI_API_KEY
+        sync: false
+      - key: RESEND_API_KEY
+        sync: false
+      - key: CONTACT_EMAIL_TO
+        sync: false
+      - key: ADMIN_PASSWORD_HASH
+        sync: false
+      - key: ALLOWED_ORIGINS
+        value: https://zroxz.com,https://www.zroxz.com
+    healthCheckPath: /health
+    autoDeploy: true
