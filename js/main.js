@@ -150,5 +150,34 @@ document.addEventListener('DOMContentLoaded', () => {
         });
       });
     });
+  // 6. COUNT UP ANIMATION FOR STATS
+  const statsContainer = document.querySelector('.hero-stat');
+  if (statsContainer) {
+    const statsObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const countUpElements = entry.target.querySelectorAll('.count-up');
+          countUpElements.forEach((targetEl) => {
+            const targetNum = parseInt(targetEl.getAttribute('data-target'), 10);
+            if (isNaN(targetNum)) return;
+            let currentNum = 0;
+            const duration = 2000; // 2 seconds
+            const stepTime = Math.abs(Math.floor(duration / (targetNum || 1)));
+            
+            const timer = setInterval(() => {
+              currentNum += 1;
+              targetEl.textContent = currentNum;
+              if (currentNum >= targetNum) {
+                targetEl.textContent = targetNum;
+                clearInterval(timer);
+              }
+            }, stepTime);
+          });
+          statsObserver.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+
+    statsObserver.observe(statsContainer);
   }
 });
