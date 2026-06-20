@@ -150,6 +150,8 @@ document.addEventListener('DOMContentLoaded', () => {
         });
       });
     });
+  }
+
   // 6. COUNT UP ANIMATION FOR STATS (HERO)
   const countUpElements = document.querySelectorAll('.hero-stat .count-up');
   if (countUpElements.length > 0) {
