@@ -7,8 +7,10 @@
   'use strict';
 
   // ── Configuration ────────────────────────────────────────────────────────
-  // UPDATE THIS when your Render URL is confirmed or if you add api.zroxz.com
-  const API_URL = 'https://zroxz-backend.onrender.com';
+  // Automatically select local or production API URL based on hostname
+  const API_URL = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
+    ? 'http://localhost:3001'
+    : 'https://zroxz-backend.onrender.com';
 
   const FIRST_MESSAGE = "Hey! I'm the Zroxz assistant. I can tell you about our AI chatbots, voice agents, CRM automation, or web & video work — or point you to the right person. What are you working on?";
 

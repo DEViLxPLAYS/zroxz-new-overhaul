@@ -17,9 +17,23 @@ app.use(helmet());
 // Gzip compression — reduces payload size on every response
 app.use(compression());
 
-// CORS — only the production domain (or localhost for dev)
+// CORS — allow production domains and local development
+const allowedOrigins = (process.env.ALLOWED_ORIGINS || 'https://zroxz.com,https://www.zroxz.com')
+  .split(',')
+  .map(o => o.trim());
+
 app.use(cors({
-  origin: process.env.CORS_ORIGIN || 'https://zroxz.com',
+  origin: (origin, callback) => {
+    if (!origin) return callback(null, true);
+    if (
+      allowedOrigins.includes(origin) ||
+      origin.startsWith('http://localhost:') ||
+      origin.startsWith('http://127.0.0.1:')
+    ) {
+      return callback(null, true);
+    }
+    return callback(new Error('Not allowed by CORS'));
+  },
   methods: ['GET', 'POST', 'PUT'],
   credentials: true,
 }));

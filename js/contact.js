@@ -6,8 +6,10 @@
 (function () {
   'use strict';
 
-  // UPDATE THIS when your Render URL is confirmed
-  const API_URL = 'https://zroxz-backend.onrender.com';
+  // Automatically select local or production API URL based on hostname
+  const API_URL = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
+    ? 'http://localhost:3001'
+    : 'https://zroxz-backend.onrender.com';
 
   function initContactForm() {
     const form = document.getElementById('contact-form');
